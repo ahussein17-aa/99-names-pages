@@ -1,32 +1,418 @@
 <!DOCTYPE html>
+<!--
+  99 Names of Allah — launch page.
+
+  BEFORE SHARING THE LINK: replace APP_STORE_URL below (search for it, two places)
+  with the real product URL, e.g. https://apps.apple.com/app/id6749123456
+  Find the ID in App Store Connect → App Information → Apple ID.
+  Then delete the class "cta--pending" from the hero button.
+-->
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>99 Names of Allah</title>
-  <style>
-    :root { --green: #1f5135; --ink: #1c1c1e; --muted: #5b5b60; --bg: #f4f1ea; --card: #ffffff; }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--ink); text-align: center;
-      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    .wrap { max-width: 560px; margin: 0 auto; padding: 72px 24px 80px; }
-    h1 { color: var(--green); font-size: 30px; margin: 0 0 6px; }
-    .sub { color: var(--muted); margin-bottom: 36px; }
-    .links a { display: block; background: var(--card); border-radius: 14px; padding: 18px;
-      margin: 14px 0; text-decoration: none; color: var(--green); font-weight: 600;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-    footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>99 Names of Allah — Asma ul Husna for iPhone</title>
+<meta name="description" content="Learn the 99 Names of Allah, reflect on one each day, and call on Him by the Name that fits how you feel. Fully offline. No account, no ads, no tracking.">
+<meta name="theme-color" content="#0E1311">
+<link rel="icon" href="icon.png">
+<meta property="og:title" content="99 Names of Allah — Asma ul Husna">
+<meta property="og:description" content="Learn the Most Beautiful Names, reflect on one each day, and call on Allah by them. Free, offline, private.">
+<meta property="og:image" content="icon.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Karla:wght@400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E1311;          /* night ground */
+  --ink-2:#131A16;
+  --green:#1F4D3A;
+  --green-deep:#143628;
+  --green-lift:#26584291;
+  --gold:#C8A45A;
+  --gold-deep:#9A7732;
+  --cream:#F6F1E8;
+  --cream-dim:#C9C3B4;
+  --muted:#8E9A90;
+  --rule:#C8A45A2e;
+  --display:"Marcellus",Georgia,"Times New Roman",serif;
+  --body:"Karla","Helvetica Neue",Helvetica,sans-serif;
+  --arabic:"Amiri",serif;
+  --pad:clamp(20px,5vw,40px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{
+  margin:0;background:var(--ink);color:var(--cream);
+  font:400 17px/1.7 var(--body);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* ---------- geometric ground ---------- */
+.girih{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.glow{
+  position:absolute;left:50%;top:-18vh;transform:translateX(-50%);
+  width:min(1100px,140vw);aspect-ratio:1;border-radius:50%;z-index:0;pointer-events:none;
+  background:radial-gradient(circle,#1F4D3A99 0%,#1F4D3A2b 42%,transparent 68%);
+  filter:blur(10px);
+}
+
+/* ---------- shell ---------- */
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
+section{position:relative}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(56px,10vh,110px) 0 clamp(48px,8vh,88px);text-align:center;overflow:hidden}
+.hero .wrap{max-width:780px}
+.icon{
+  width:96px;height:96px;margin:0 auto 30px;border-radius:22px;
+  box-shadow:0 18px 44px #0009,0 0 0 1px #C8A45A38;
+}
+.eyebrow{
+  font:500 12px/1 var(--body);letter-spacing:.34em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 22px;
+}
+h1{
+  font:400 clamp(37px,8.4vw,78px)/1.04 var(--display);
+  margin:0 0 18px;letter-spacing:-.01em;
+}
+h1 .ampersand{display:block;color:var(--gold);font-size:.4em;letter-spacing:.16em;
+  text-transform:uppercase;margin-top:16px;font-family:var(--body);font-weight:500}
+.lede{
+  font-size:clamp(17px,2.3vw,20px);line-height:1.62;color:var(--cream-dim);
+  max-width:34em;margin:0 auto 38px;
+}
+.cta{
+  display:inline-flex;align-items:center;gap:12px;
+  background:linear-gradient(160deg,#D9B66E,#C8A45A 46%,#9A7732);
+  color:#11251B;text-decoration:none;
+  font:600 16px/1 var(--body);letter-spacing:.02em;
+  padding:17px 30px;border-radius:100px;
+  box-shadow:0 14px 34px #C8A45A24,inset 0 1px 0 #FFFFFF4d;
+  transition:transform .25s cubic-bezier(.2,.8,.3,1),box-shadow .25s;
+}
+.cta:hover{transform:translateY(-2px);box-shadow:0 20px 44px #C8A45A38,inset 0 1px 0 #FFFFFF66}
+.cta svg{width:19px;height:19px;fill:currentColor}
+.cta--pending{pointer-events:none;filter:saturate(.55) brightness(.82)}
+.cta-note{margin:18px 0 0;font-size:14px;color:var(--muted);letter-spacing:.02em}
+.cta-note b{color:var(--cream-dim);font-weight:500}
+
+/* names ribbon */
+.ribbon{
+  margin-top:clamp(44px,7vh,76px);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:18px 0;overflow:hidden;position:relative;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);
+}
+.ribbon-track{display:flex;width:max-content;animation:drift 150s linear infinite}
+.ribbon span{
+  font-family:var(--arabic);font-size:27px;line-height:1.9;
+  color:#F6F1E8;opacity:.42;padding:0 .62em;white-space:nowrap;
+}
+@keyframes drift{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ribbon-track{animation:none}}
+
+/* ---------- the ayah ---------- */
+.ayah{padding:clamp(72px,12vh,132px) 0;text-align:center}
+.ayah .wrap{max-width:720px}
+.ayah blockquote{
+  margin:0;font:400 clamp(24px,4vw,36px)/1.48 var(--display);
+  color:var(--cream);letter-spacing:-.005em;
+}
+.ayah cite{
+  display:block;margin-top:26px;font-style:normal;
+  font:500 12px/1 var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
+}
+.diamond{
+  width:9px;height:9px;margin:0 auto 34px;background:var(--gold);
+  transform:rotate(45deg);opacity:.85;
+}
+
+/* ---------- feature rows ---------- */
+.features{padding:clamp(20px,4vh,44px) 0 clamp(64px,10vh,110px)}
+.row{
+  display:grid;gap:clamp(32px,6vw,76px);align-items:center;
+  grid-template-columns:1fr 1fr;
+  padding:clamp(40px,7vh,80px) 0;
+  border-top:1px solid var(--rule);
+}
+.row:first-child{border-top:0}
+.row:nth-child(even) .shot{order:2}
+.row h2{
+  font:400 clamp(28px,4.2vw,40px)/1.16 var(--display);
+  margin:0 0 18px;letter-spacing:-.01em;
+}
+.row .kicker{
+  font:500 11px/1 var(--body);letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 16px;
+}
+.row p{margin:0 0 16px;color:var(--cream-dim);max-width:34em}
+.row ul{margin:22px 0 0;padding:0;list-style:none}
+.row li{
+  position:relative;padding-left:26px;margin-bottom:11px;
+  color:var(--cream-dim);font-size:16px;
+}
+.row li::before{
+  content:"";position:absolute;left:2px;top:.62em;
+  width:7px;height:7px;background:var(--gold);transform:rotate(45deg);opacity:.9;
+}
+.shot{position:relative;display:flex;justify-content:center}
+.shot img{
+  width:min(300px,84%);border-radius:30px;
+  box-shadow:0 30px 70px #000000a6,0 0 0 1px #C8A45A2b;
+}
+.shot::after{
+  content:"";position:absolute;inset:auto 0 -8%;height:60%;z-index:-1;
+  background:radial-gradient(ellipse at center,#1F4D3A66,transparent 70%);
+}
+
+/* ---------- privacy band ---------- */
+.band{
+  background:
+    linear-gradient(180deg,#143628 0%,#1F4D3A 100%);
+  padding:clamp(64px,10vh,104px) 0;text-align:center;position:relative;overflow:hidden;
+}
+.band .wrap{max-width:700px}
+.band h2{font:400 clamp(28px,4.4vw,42px)/1.18 var(--display);margin:0 0 20px}
+.band p{color:#DCD6C6;margin:0 auto;max-width:32em}
+.pills{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin-top:34px}
+.pill{
+  border:1px solid #C8A45A5c;border-radius:100px;padding:9px 19px;
+  font:500 13px/1 var(--body);letter-spacing:.06em;color:var(--cream);
+  background:#0E131145;
+}
+
+/* ---------- honest note ---------- */
+.note{padding:clamp(64px,10vh,104px) 0}
+.note .wrap{max-width:660px}
+.note-card{
+  border:1px solid var(--rule);border-radius:20px;
+  background:linear-gradient(180deg,#131A16,#0E1311);
+  padding:clamp(28px,5vw,44px);
+}
+.note h2{font:400 26px/1.2 var(--display);margin:0 0 16px}
+.note p{color:var(--cream-dim);font-size:16px;margin:0 0 14px}
+.note p:last-child{margin-bottom:0}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--rule);padding:52px 0 62px;text-align:center}
+.flinks{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.flinks a{
+  color:var(--cream-dim);text-decoration:none;font-size:15px;
+  padding-bottom:3px;border-bottom:1px solid transparent;transition:.2s;
+}
+.flinks a:hover{color:var(--gold);border-bottom-color:#C8A45A80}
+.copy{color:var(--muted);font-size:13.5px;letter-spacing:.04em;margin:0}
+
+/* ---------- motion ---------- */
+.rise{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.rise.in{opacity:1;transform:none}
+.hero .rise{transition-delay:calc(var(--i,0) * 90ms)}
+@media (prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;transition:none}}
+.no-js .rise{opacity:1;transform:none}
+
+@media(max-width:760px){
+  .row{grid-template-columns:1fr;text-align:center}
+  .row:nth-child(even) .shot{order:0}
+  .row p,.row ul{margin-left:auto;margin-right:auto}
+  .row li{text-align:left;max-width:22em;margin-left:auto;margin-right:auto}
+  .shot img{width:min(272px,74%)}
+}
+</style>
 </head>
 <body>
+<noscript><style>.rise{opacity:1;transform:none}</style></noscript>
+
+<svg class="girih" aria-hidden="true">
+  <defs>
+    <pattern id="khatam" width="74" height="74" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#C8A45A" stroke-width="1" opacity=".13">
+        <rect x="18.5" y="18.5" width="37" height="37"/>
+        <rect x="18.5" y="18.5" width="37" height="37" transform="rotate(45 37 37)"/>
+        <path d="M0 37h11M63 37h11M37 0v11M37 63v11"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#khatam)"/>
+</svg>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="glow"></div>
   <div class="wrap">
-    <h1>99 Names of Allah</h1>
-    <div class="sub">Asma ul Husna &middot; learn &amp; reflect</div>
-    <div class="links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="support.html">Support</a>
-    </div>
-    <footer>&copy; 2026 Yalla Designs</footer>
+    <img class="icon rise" style="--i:0" src="icon.png" alt="99 Names app icon" width="96" height="96">
+    <p class="eyebrow rise" style="--i:1">Asma ul Husna</p>
+    <h1 class="rise" style="--i:2">99 Names of Allah<span class="ampersand">Learn &middot; Reflect &middot; Call upon Him</span></h1>
+    <p class="lede rise" style="--i:3">
+      All ninety-nine Names, with a reflection and a suggested du&rsquo;a for each.
+      A Name to sit with every morning, and a Name to turn to for whatever
+      you are carrying right now.
+    </p>
+    <a class="cta cta--pending rise" style="--i:4" href="APP_STORE_URL">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.54c.02-2.3 1.88-3.4 1.96-3.45-1.07-1.56-2.73-1.78-3.32-1.8-1.42-.14-2.76.83-3.48.83-.71 0-1.82-.81-2.99-.79-1.54.02-2.96.89-3.75 2.26-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.39 0 1.78.74 2.99.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.4-3.68zM14.9 5.4c.63-.77 1.06-1.83.94-2.9-.91.04-2.01.61-2.66 1.37-.58.67-1.09 1.75-.95 2.78 1.01.08 2.04-.51 2.67-1.25z"/></svg>
+      Download on the App&nbsp;Store
+    </a>
+    <p class="cta-note rise" style="--i:5"><b>Free.</b> No account, no ads, no tracking. Works fully offline.</p>
   </div>
+
+  <div class="ribbon rise" style="--i:6" aria-hidden="true">
+    <div class="ribbon-track">
+      <div class="ribbon-half"></div>
+      <div class="ribbon-half"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AYAH ================= -->
+<section class="ayah">
+  <div class="wrap">
+    <div class="diamond rise"></div>
+    <blockquote class="rise">
+      &ldquo;And to Allah belong the Most Beautiful Names, so call upon Him by them.&rdquo;
+    </blockquote>
+    <cite class="rise">Qur&rsquo;an 7:180</cite>
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="features">
+  <div class="wrap">
+
+    <div class="row">
+      <div class="shot rise"><img src="shots/01_home.png" alt="The Home screen showing the Name of the Day, Al-Hafiz, with a reflection and a suggested du'a." loading="lazy"></div>
+      <div class="rise">
+        <p class="kicker">Every morning</p>
+        <h2>One Name to carry through the day</h2>
+        <p>
+          Open the app and a single Name is waiting, with a short reflection on what
+          it asks of you and a du&rsquo;a you can say straight away. Put it on your
+          Home or Lock Screen and the Name meets you before the app does.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="shot rise"><img src="shots/04_situations.png" alt="The Situations screen listing everyday states such as anxious, grateful and in need." loading="lazy"></div>
+      <div class="rise">
+        <p class="kicker">However you arrive</p>
+        <h2>The Name for what you&rsquo;re feeling</h2>
+        <p>
+          Anxious, grateful, in need, seeking forgiveness &mdash; thirteen everyday states,
+          each opening onto the Names to turn to and the words to say. For the moments
+          when you know you want to make du&rsquo;a but not where to begin.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="shot rise"><img src="shots/03_name_detail.png" alt="A Name detail page showing Arabic calligraphy, meaning, Qur'an reference, du'as and reflections." loading="lazy"></div>
+      <div class="rise">
+        <p class="kicker">For each of the ninety-nine</p>
+        <h2>Meaning, du&rsquo;a, and a place for your own words</h2>
+        <ul>
+          <li>Arabic, transliteration, and an unhurried explanation of the meaning</li>
+          <li>Qur&rsquo;an references, shown with their status made plain</li>
+          <li>Write your own du&rsquo;as and keep a private journal for any Name</li>
+          <li>Six Arabic calligraphy styles, with the text size in your hands</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="shot rise"><img src="shots/02_explore.png" alt="The Explore screen showing all 99 Names grouped by category." loading="lazy"></div>
+      <div class="rise">
+        <p class="kicker">Learn them by heart</p>
+        <h2>All ninety-nine, then a way to remember</h2>
+        <p>
+          Browse the full list or move through them by theme &mdash; mercy, provision,
+          protection, guidance. When you&rsquo;re ready, flip-cards and a quiz turn
+          reading into memorising, at whatever pace suits you.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= PRIVACY ================= -->
+<section class="band">
+  <div class="wrap">
+    <h2 class="rise">Your du&rsquo;as stay yours</h2>
+    <p class="rise">
+      There is no account to make and no server to sign in to. Everything &mdash; the Names,
+      your journal, the du&rsquo;as you write &mdash; lives on your device and nowhere else.
+      The app collects nothing, because there is nothing for it to send.
+    </p>
+    <div class="pills rise">
+      <span class="pill">No account</span>
+      <span class="pill">No ads</span>
+      <span class="pill">No tracking</span>
+      <span class="pill">Fully offline</span>
+      <span class="pill">Free</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HONEST NOTE ================= -->
+<section class="note">
+  <div class="wrap">
+    <div class="note-card rise">
+      <h2>A note on accuracy</h2>
+      <p>
+        The Arabic, transliterations, and short meanings follow the well-established
+        list of the Asma ul Husna. The reflections, du&rsquo;as, and detailed meanings
+        were written for this app to help you reflect &mdash; they are not quotations,
+        and they are not presented as such.
+      </p>
+      <p>
+        Qur&rsquo;an references carry their status openly: those still awaiting scholarly
+        review are marked as such inside the app rather than passed off as settled.
+        The full list of what the app draws on is on its Sources &amp; References page.
+        Please confirm any reference with a qualified scholar before relying on it in
+        teaching or da&rsquo;wah.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks">
+      <a href="APP_STORE_URL">App Store</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <p class="copy">&copy; 2026 Yalla Designs</p>
+  </div>
+</footer>
+
+<script>
+// The ninety-nine, drifting across the hero rule.
+const NAMES = "الرحمن·الرحيم·الملك·القدوس·السلام·المؤمن·المهيمن·العزيز·الجبار·المتكبر·الخالق·البارئ·المصور·الغفار·القهار·الوهاب·الرزاق·الفتاح·العليم·القابض·الباسط·الخافض·الرافع·المعز·المذل·السميع·البصير·الحكم·العدل·اللطيف·الخبير·الحليم·العظيم·الغفور·الشكور·العلي·الكبير·الحفيظ·المقيت·الحسيب·الجليل·الكريم·الرقيب·المجيب·الواسع·الحكيم·الودود·المجيد·الباعث·الشهيد·الحق·الوكيل·القوي·المتين·الولي·الحميد·المحصي·المبدئ·المعيد·المحيي·المميت·الحي·القيوم·الواجد·الماجد·الواحد·الأحد·الصمد·القادر·المقتدر·المقدم·المؤخر·الأول·الآخر·الظاهر·الباطن·الوالي·المتعالي·البر·التواب·المنتقم·العفو·الرؤوف·مالك الملك·ذو الجلال والإكرام·المقسط·الجامع·الغني·المغني·المانع·الضار·النافع·النور·الهادي·البديع·الباقي·الوارث·الرشيد·الصبور".split("·");
+document.querySelectorAll(".ribbon-half").forEach(half => {
+  half.style.display = "flex";
+  NAMES.forEach(n => {
+    const s = document.createElement("span");
+    s.textContent = n;
+    half.appendChild(s);
+  });
+});
+
+// Reveal on scroll; the hero rises immediately.
+// If the browser can't observe, show everything rather than hiding it.
+if (!("IntersectionObserver" in window)) {
+  document.documentElement.classList.add("no-js");
+} else {
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+}, { rootMargin: "0px 0px -12% 0px" });
+document.querySelectorAll(".rise").forEach(el => io.observe(el));
+}
+requestAnimationFrame(() => document.querySelectorAll(".hero .rise").forEach(el => el.classList.add("in")));
+</script>
 </body>
 </html>
